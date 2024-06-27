@@ -20,6 +20,7 @@ tell application "rekordbox"
 	display dialog "How many tracks do you want to cue? 
 WARNING: This Advanced Script will not work unless you've set up the hot keys." default answer "" buttons {"Cancel", "Continue"} default button "Continue"
 	set myVariable to the text returned of the result
+	set myVariable to myVariable as integer
 	set mystring to "Your going to run over " & myVariable
 	#display dialog myVariable buttons {"OK"} default button 1
 	
@@ -76,7 +77,7 @@ tell application "System Events"
 		
 		
 		# move forward 24 bars 
-		repeat 8 times #< - Change Number to change placement of Cue
+		repeat 16 times #< - Change Number to change placement of Cue
 			delay 0.1
 			# move right 8 
 			key code 124
@@ -96,7 +97,7 @@ tell application "System Events"
 		delay 0.1
 		
 		# move forward 32 bars 
-		repeat 8 times #< - Change Number to change placement of Cue
+		repeat 16 times #< - Change Number to change placement of Cue
 			delay 0.1
 			# move right 8 
 			key code 124
@@ -117,7 +118,7 @@ tell application "System Events"
 		
 		
 		# move forward 40 bars 
-		repeat 8 times #< - Change Number to change placement of Cue
+		repeat 16 times #< - Change Number to change placement of Cue
 			delay 0.1
 			# move right 8 
 			key code 124
@@ -139,7 +140,7 @@ tell application "System Events"
 		
 		
 		# move forward 48 bars 
-		repeat 8 times #< - Change Number to change placement of Cue
+		repeat 16 times #< - Change Number to change placement of Cue
 			delay 0.1
 			# move right 8 
 			key code 124
@@ -225,10 +226,12 @@ tell application "System Events"
 		delay 0.1
 		
 		
-		
 		# Move Down 1
-		tell application "System Events" to key code 125 using command down
+		# tell application "System Events" to key code 125 using command down
+		key code 125 using {command down}
 		
+		key code 0 using {option down}
+		delay 1
 		
 		
 		
